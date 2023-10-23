@@ -116,8 +116,8 @@ function holiday(day, month) {
 		//-- Browser information
 		information = document.querySelector('#information');
 		repeatinfo = setInterval(function() {
-			information.innerHTML = `<b>Mã trình duyệt:</b> ${navigator.appCodeName}<br><b>Tên trình duyệt:</b> ${navigator.appName}<br><b>Cookies:</b> ${navigator.cookieEnabled}<br><b>Trạng thái hoạt động:</b> ${navigator.onLine}<br><b>Nền tảng:</b> ${navigator.platform} <br>
-			<b>User-Agent:</b> ${navigator.userAgent} <br><b>Thời gian: </b> ${new Date()}`;
+			information.innerHTML = `<b>Browser code:</b> ${navigator.appCodeName}<br><b>Browser name:</b> ${navigator.appName}<br><b>Cookies:</b> ${navigator.cookieEnabled}<br><b>Operating status:</b> ${navigator.onLine}<br><b>Communication:</b> ${navigator.platform} <br>
+			<b>User-Agent:</b> ${navigator.userAgent} <br><b>Todays Time: </b> ${new Date()}`;
 		}, 10);
 
 		//-- CPU Usage detection
@@ -139,13 +139,13 @@ function holiday(day, month) {
 		if (localStorage.getItem('Pengunjung')) {
 			setInterval(function() {
 				fetch("https://api.diennguuvc.repl.co/total_request?admin=true").then(res=>res.json()).then(res=> {
-					tag_pengunjung.innerHTML = res.total+" <small>người</small>";
+					tag_pengunjung.innerHTML = res.total+" <small>People</small>";
 				});
 			}, 2500);
 		} else {
 			fetch("https://api.diennguuvc.repl.co/total_request").then(res=>res.json()).then(res=> {
 				localStorage.setItem('Pengunjung', 'true');
-				tag_pengunjung.innerHTML = res.total+" <small>người</small>";
+				tag_pengunjung.innerHTML = res.total+" <small>People</small>";
 			});
 		}
 	}
@@ -167,7 +167,7 @@ function holiday(day, month) {
 		if (minggu_str > 0 && minggu_str < 7) {
 			return `<small>${minggu_str} tuần trước</small>`;
 		} else if (minggu > 52.1428571 && minggu_str > 7) {
-			return `<small>vài năm trước</small>`;
+			return `<small>a few month ago</small>`;
 		} else if (detik < 60 && detik_str > 0) {
 			return `<small>${detik_str} giây trước</small>`;
 		} else if (menit < 60 && menit_str > 0) {
@@ -180,8 +180,8 @@ function holiday(day, month) {
 			return `<small>${hari_str} ngày trước</small>`;
 		}
 	}
-	msg = `<span class="dropdown-item dropdown-header">Thông báo ($jumlah)</span><!--$item--><div class="dropdown-divider"></div>
-	<a href="#" class="dropdown-item dropdown-footer">Xem tất cả thông báo</a>`;
+	msg = `<span class="dropdown-item dropdown-header">Notification ($jumlah)</span><!--$item--><div class="dropdown-divider"></div>
+	<a href="#" class="dropdown-item dropdown-footer">See all Notification</a>`;
 	msg_ = ``;
 
 	for (var e = 0; e < message_list.length; e++) {
@@ -249,11 +249,12 @@ function holiday(day, month) {
 			console.log(nomusic);
 		}catch(e) {
 			swal.fire({
-				title: 'Bạn có muốn phát bài hát của riêng bạn từ youtube không?',
+				title: 'Do not harm this API. If your key is expired, inbox author for new API key!',
 				icon: 'warning',
+				showConfirmButton: false,
 				showCancelButton: true,
 				confirmButtonText: 'Yes',
-				cancelButtonText: `No`,
+				cancelButtonText: `ok`,
 			}).then((result) => {
 
 				if (result.isConfirmed) {
