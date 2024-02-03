@@ -1,4 +1,4 @@
-endpoint = `https://sakibin.sinha-apiv2.repl.co`
+endpoint = `https://xakibin.onrender.com`
 apikey = `SAKIBIN-FREE-SY6B4X`
 message_list = [{
     icon: 'fa-solid fa-star-exclamation',
