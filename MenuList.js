@@ -1,4 +1,4 @@
-endpoint = `https://xakibin.onrender.com`
+endpoint = `https://xakibin-fs8d.onrender.com`
 apikey = `SAKIBIN-FREE-SY6B4X`
 message_list = [{
     icon: 'fa-solid fa-star-exclamation',
